@@ -1,0 +1,17 @@
+--- avrdude_gpio.conf.original	2017-02-11 19:40:29.140126107 +0100
++++ avrdude_gpio.conf	2017-02-11 19:40:11.550125761 +0100
+@@ -14566,3 +14566,14 @@
+         size            = 3;
+     ;
+ ;
++
++
++programmer
++  id    = "pi_1";
++  desc  = "Use the Linux sysfs interface to bitbang GPIO lines";
++  type  = "linuxgpio";
++  reset = 12;
++  sck   = 24;
++  mosi  = 23;
++  miso  = 18;
++;
