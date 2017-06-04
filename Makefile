@@ -12,7 +12,7 @@ BOARD:=arduino:avr:pro:cpu=8MHzatmega328
 
 HARDWARE:=-hardware ${BASE}/hardware -hardware ${USER_BASE}/packages 
 TOOLS:=-tools ${BASE}/tools-builder -tools ${USER_BASE}/packages
-LIBRARIES=-built-in-libraries ${BASE}/libraries
+LIBRARIES=-built-in-libraries ${BASE}/lib
 LIBRARIES+=-libraries ${USER_LIBS}  # Where U8g2 comes from
 WARNINGS:=-warnings all -logger human
 
