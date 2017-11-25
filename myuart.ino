@@ -1,3 +1,4 @@
+
 #include "myuart.h"
 
 #include <util/setbaud.h>
@@ -28,5 +29,7 @@ void uart_debug(const char *fmt, ...)
         loop_until_bit_is_set(UCSR0A, UDRE0); /* Wait until data register empty. */
         UDR0 = msg[i++];
     }
+#else
+    (void) fmt;
 #endif
 }

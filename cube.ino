@@ -76,7 +76,7 @@ void setup(void) {
 // 3D projection - make a diagram or read any 3D graphics book.
 ///////////////////////////////////////////////////////////////
 
-void drawPoint(int pt)
+void drawPoint(unsigned pt)
 {
     const int width=128;
     const int height=64;
@@ -185,7 +185,7 @@ void loop(void) {
     u8g2.firstPage();
     do {
         updateBanner();
-        for(int i=0; i<sizeof(points)/sizeof(points[0]); i++)
+        for(unsigned i=0; i<sizeof(points)/sizeof(points[0]); i++)
             drawPoint(i);
     } while(u8g2.nextPage());
 
