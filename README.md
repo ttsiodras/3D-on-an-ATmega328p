@@ -31,3 +31,6 @@ the code. And yes, that means that the SPI pins are shared - either driven
 by the PI or by the ATmega (but not at the same time).
 
 I thoroughly enjoyed playing with HW again - this was fun :-)
+
+UPDATE: De-soldered the BS1 SMD resistor, and switched the screen to I2C
+mode. In the end, I like the simplicity of I2C.
