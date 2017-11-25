@@ -57,10 +57,20 @@
 //U8G2_UC1611_EA_DOGXL240_F_2ND_HW_I2C u8g2(U8G2_R0, /* reset=*/ 8);	// Due, 2nd I2C, DOGXL240 Test Board
 //U8G2_UC1611_EA_DOGXL240_F_4W_SW_SPI u8g2(U8G2_R0, /* clock=*/ 13, /* data=*/ 11, /* cs=*/ 10, /* dc=*/ 9, /* reset=*/ 8);   // Due, SW SPI, DOGXL240 Test Board
 
-// ttsiodras - this is for my SSD1306 over 4-wire SPI:
+// My experiments
+
+// ttsiodras - this is for my "big" SSD1306 over 4-wire SPI:
 //U8G2_SSD1306_128X64_NONAME_F_4W_SW_SPI u8g2(U8G2_R0, /* clock=*/ 13, /* data=*/ 11, /* cs=*/ 10, /* dc=*/ 9, /* reset=*/ 8);
-// ttsiodras - this is for my SSD1306 over 4-wire HW SPI:
-U8G2_SSD1306_128X64_NONAME_F_4W_HW_SPI u8g2(U8G2_R0, /* cs=*/ 10, /* dc=*/ 9, /* reset=*/ 8);
+
+// ttsiodras - this is for my "big" SSD1306 over 4-wire HW SPI:
+//U8G2_SSD1306_128X64_NONAME_F_4W_HW_SPI u8g2(U8G2_R0, /* cs=*/ 10, /* dc=*/ 9, /* reset=*/ 8);
+
+// ttsiodras - this is for my "big" SSD1306 over HW I2C.
+// it's also used for my "medium" SSD1306 over HW I2C.
+U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, 8, SCL, SDA);
+
+// ttsiodras - this is for my "tiny" SSD1306 over HW I2C:
+//U8G2_SSD1306_128X32_UNIVISION_F_HW_I2C u8g2(U8G2_R0, U8X8_PIN_NONE);
 
 // End of constructor list
 
