@@ -194,5 +194,5 @@ void loop(void) {
     updateLED();
 #endif
     updatePerformanceReport();
-    frames++;
+    frames = (frames + 1)%72;
 }
