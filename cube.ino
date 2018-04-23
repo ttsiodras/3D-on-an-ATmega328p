@@ -108,7 +108,6 @@ void drawPoint(unsigned pt)
 
 void updateLED()
 {
-#ifdef LEDME
     static int ledOn = 0;
 
     ledOn = ledOn^1;
@@ -117,7 +116,6 @@ void updateLED()
     else
         PORTB &= ~_BV(PORTB6);
     analogWrite(5, 128+(sincos[angle].si/2));
-#endif
 }
 
 
@@ -190,7 +188,9 @@ void loop(void) {
     } while(u8g2.nextPage());
 
     // _delay_ms(100);
+#ifdef LEDME
     updateLED();
+#endif
     updatePerformanceReport();
     frames++;
 }
