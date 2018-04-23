@@ -155,7 +155,6 @@ void updatePerformanceReport()
 
 void updateBanner()
 {
-#ifdef VANITY
     int src=frames%msgLen, dst=0;
     while(dst!=msgLen) {
         scrolled[dst++] = msg[src];
@@ -163,7 +162,6 @@ void updateBanner()
     }
     scrolled[dst] = 0;
     u8g2.drawStr(0, 62, scrolled);
-#endif
 }
 
 
@@ -182,7 +180,9 @@ void loop(void) {
 
     u8g2.firstPage();
     do {
+#ifdef VANITY
         updateBanner();
+#endif
         for(unsigned i=0; i<sizeof(points)/sizeof(points[0]); i++)
             drawPoint(i);
     } while(u8g2.nextPage());
