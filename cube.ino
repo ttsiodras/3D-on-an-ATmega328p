@@ -155,13 +155,15 @@ void updatePerformanceReport()
 
 void updateBanner()
 {
-    int src=frames%msgLen, dst=0;
+    static unsigned anchor=0;
+    unsigned src=anchor, dst=0;
     while(dst!=msgLen) {
         scrolled[dst++] = msg[src];
         src = (src+1) % msgLen;
     }
     scrolled[dst] = 0;
-    u8g2.drawStr(0, 62, scrolled);
+    u8g2.drawStr(0, 64, scrolled);
+    anchor = (anchor+1) % msgLen;
 }
 
 
